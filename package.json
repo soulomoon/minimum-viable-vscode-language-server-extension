@@ -1,10 +1,10 @@
 {
-  "name": "REPLACE_ME",
-  "description": "REPLACE_ME",
-  "author": "REPLACE_ME",
+  "name": "scip_lsp",
+  "description": "SCIP LSP",
+  "author": "soulomoon",
   "license": "MIT",
   "version": "1.0.0",
-  "publisher": "REPLACE_ME",
+  "publisher": "soulomoon",
   "categories": [],
   "engines": {
     "vscode": "^1.75.0"
@@ -20,7 +20,7 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -b",
     "watch": "tsc -b -w",
-    "postinstall": "cd client && npm install && cd ../server && npm install && cd .."
+    "postinstall": "cd client && npm install && cd .."
   },
   "devDependencies": {
     "@types/node": "^20.5.7",

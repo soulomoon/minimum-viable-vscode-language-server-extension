@@ -12,18 +12,14 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
   // The server is implemented in node
-  const serverModule = context.asAbsolutePath(
-    path.join("server", "out", "server.js")
+  const serverExecutable = context.asAbsolutePath(
+    path.join("sciplsp")
   );
 
-  // If the extension is launched in debug mode then the debug server options are used
-  // Otherwise the run options are used
+
   const serverOptions: ServerOptions = {
-    run: { module: serverModule, transport: TransportKind.ipc },
-    debug: {
-      module: serverModule,
-      transport: TransportKind.ipc,
-    },
+    run: { command: serverExecutable, transport: TransportKind.stdio },
+    debug: { command: serverExecutable, transport: TransportKind.stdio },
   };
 
   // Options to control the language client
@@ -38,8 +34,8 @@ export function activate(context: ExtensionContext) {
 
   // Create the language client and start the client.
   client = new LanguageClient(
-    "REPLACE_ME language-server-id",
-    "REPLACE_ME language server name",
+    "scip language-server",
+    "scip language-server",
     serverOptions,
     clientOptions
   );
